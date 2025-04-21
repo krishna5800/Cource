@@ -82,7 +82,9 @@ int main()
 
 	// now our output changes to some value == 2147483598
 
+	// if i am shifting any number by -ve bit it will show me 1) warning , 2) it will give me garbage value as an output
 
+	
 
 
 	return 0;
