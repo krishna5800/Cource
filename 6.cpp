@@ -84,19 +84,53 @@ int main()
 
 	// if i am shifting any number by -ve bit it will show me 1) warning , 2) it will give me garbage value as an output
 
-	int a;
+	// int a;
 
-	a = 5;
+	// a = 10;
 
-	cout << (++a) << endl;
-	
-	cout << (a++) << endl;
+	// cout << (++a) << endl;
 
-	cout << (a--) << endl;
+	// cout << (a++) << endl;
 
-	cout << (--a) << endl;
+	// cout << (a--) << endl;
 
-	
+	// cout << (--a)*10 << endl;
 
+	// int a;
+
+	// a = 10;
+
+	// cout << (++a)<< endl;
+
+
+	// BREAK AND CONTINUE
+
+
+	//Break wala code
+
+	// for(int i = 0; i<5; i++)
+	// {
+	// 	cout << i << endl;
+	// 	if(i==3)
+	// 	{
+	// 		break;
+	// 	}
+	// }
+
+	//Continue wala code
+
+	// for(int i = 0; i<5; i++)
+	// {
+	// 	if(i==3)
+	// 	{
+	// 		continue;  // skips 3 wala iteration
+
+	// 		//due to continue niche wala code work nahi hota
+	// 	}
+	// 	cout << i << endl;
+	// }
+
+
+	// use brackets always for better solving
 	return 0;
 }
