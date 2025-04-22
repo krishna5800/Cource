@@ -84,8 +84,19 @@ int main()
 
 	// if i am shifting any number by -ve bit it will show me 1) warning , 2) it will give me garbage value as an output
 
-	
+	int a;
 
+	a = 5;
+
+	cout << (++a) << endl;
+	
+	cout << (a++) << endl;
+
+	cout << (a--) << endl;
+
+	cout << (--a) << endl;
+
+	
 
 	return 0;
 }
