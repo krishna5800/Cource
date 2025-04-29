@@ -42,7 +42,7 @@ int main()
 
 	// cout << (a << 1) << endl;
 
-	// WHEN WE SHIFT LEFT 1 BIT OUR NUMBER / VALUE GEST DOUBLED
+	// WHEN WE SHIFT LEFT 1 BIT OUR NUMBER / VALUE GETS DOUBLED
 
 	// cout << (a << 2) << endl;
 
