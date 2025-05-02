@@ -63,7 +63,7 @@ int main()
 	// n = 5;
 
 	// cout << (n >> 1) << endl;
-	//NOW IN THIS EXAMPLE OUR OUTPUT IS NOT ACCORDINT TOTHAT RULE
+	//NOW IN THIS EXAMPLE OUR OUTPUT IS NOT ACCORDING TO THAT RULE
 
 	// int n;
 

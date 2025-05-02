@@ -1,100 +1,47 @@
-// 1
-// 1 2
-// 1   3
-// 1     4
-// 1 2 3 4 5
+// DEBUG EXERCISE
 
-
-// #include <bits/stdc++.h>
+// 1) Area of rectangle
+// #include<bits/stdc++.h>
 // using namespace std;
 
-// int main()
-// {
-//     int n = 8;
-
-//     for(int row = 0; row < n; row++)
-//     {
-//         for(int col = 0; col < row+1; col++)
-//         {
-//             if(col == 0 || col == row || row == n-1)
-//             {
-//                 cout << col+1 << " ";
-//             }
-//             else 
-//             {
-//                 cout << "  ";
-//             }
-
-//         }
-//         cout << endl;
-//     }
-//     return 0;
+// int main() {
+// 	float width, height;
+//     cout << "Enter Breadth -" << endl;
+// 	cin >> width;
+//     cout << "Enter Length -" << endl;
+//     cin >> height;
+// 	float area = width * height;
+// 	cout << "Area of Rectangle is - " << area << endl;
+// 	return 0;
 // }
 
+// 2) binary to decimal
 
-// Inverted pyramid
-
-// 1 2 3 4 5                   
-// 1     4
-// 1   3
-// 1 2
-// 1
-
-
-// #include <bits/stdc++.h>
-// using namespace std;
-
-// int main()
-// {
-//     int n = 5;
-
-//     for(int row = 0; row < n; row++)
-//     {
-//         for(int col = 0; col < n-row; col++)
-//         {
-//             if(col == 0 || row == 0 || col == n-row-1)
-//             {
-//                 cout << col+1 << " ";
-//             }
-//             else 
-//             {
-//                 cout << "  ";
-//             }
-//         }
-//         cout << endl;
-//     }
-//     return 0;
-// }
-
-
-
-
-
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main()
+int binarytodecimalno(int n)
 {
-    int n = 5;
+    int decimalno = 0;
+    int i = 0;
 
-    for(int row = 0; row < n; row++)
+    while(n)
     {
-        for(int col = 0; col < n-row; col++)
-        {
-            if(col == 0 || row == 0 || col == n-row-1)
-            {
-                cout << col+1 << " ";
-            }
-            else 
-            {
-                cout << "  ";
-            }
-        }
-        cout << endl;
+        int bit = n % 10;
+        decimalno = bit*pow(2,i++)+ decimalno;
+        n = n/10;
     }
-    return 0;
+    return decimalno;
 }
 
 
+int main()
+{
+    int n;
+    cout << "Enter binary number -" << endl;
+    cin >> n;
+    int decimal = binarytodecimalno(n);
 
-
+    cout << "Decimal Number - " << decimal << endl;
+    return 0;
+}
