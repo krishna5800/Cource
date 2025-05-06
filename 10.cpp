@@ -15,33 +15,102 @@
 // 	return 0;
 // }
 
-// 2) binary to decimal
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main()
+// {
+//     int n = 6;
+//     for (int row = 0; row < n; row++)
+//     {
+//         for(int col = 0; col < row+1; col++)
+//         {
+//             if(col == row)
+//             {
+//                 cout << 1 << " ";
+//             }
+//             else if(col == row-1)
+//             {
+//                 cout << n-col << " ";
+//             }
+//             else if(col == row-2)
+//             {
+//                 cout << (n-col-1)*2 << " ";
+//             }
+//             else if(row == 3 && col == 0)
+//             {
+//                 cout << 13 << " ";
+//             }
+//             else if(row == 4 && col ==0)
+//             {
+//                 cout << 15 << " ";
+//             }
+//             else if(row == 5 && col == 0)
+//             {
+//                 cout << 16 << " ";
+//             }
+//             else if(row == 4 && col == 1)
+//             {
+//                 cout << 10 << " ";
+//             }
+//             else if(row == 5 && col == 1)
+//             {
+//                 cout << 11 << " ";
+//             }
+//             else if(row == 5 && col == 2)
+//             {
+//                 cout << 7 << " ";
+//             }
+//             else
+//             {
+//                 cout << "  ";
+//             }
+            
+//         }
+//         cout << endl;
+//     }
+    
+//     return 0;
+// }
+
+
+#include <bits/stdc++.h>
 using namespace std;
 
-int binarytodecimalno(int n)
-{
-    int decimalno = 0;
-    int i = 0;
+int main() {
+    int n = 6;
+    vector<int> firstElem(n);
 
-    while(n)
-    {
-        int bit = n % 10;
-        decimalno = bit*pow(2,i++)+ decimalno;
-        n = n/10;
+    // Calculate leftmost values (6, 10, 13, 15, 16)
+    firstElem[1] = 6;  // Row 1 (second row)
+    for(int i = 2; i < n; i++) {
+        firstElem[i] = firstElem[i-1] + (n - i);  // +4, +3, +2, +1
     }
-    return decimalno;
-}
 
-
-int main()
-{
-    int n;
-    cout << "Enter binary number -" << endl;
-    cin >> n;
-    int decimal = binarytodecimalno(n);
-
-    cout << "Decimal Number - " << decimal << endl;
+    for(int row = 0; row < n; row++) {
+        for(int col = 0; col <= row; col++) {
+            if(col == row) {
+                // Rightmost element = 1
+                cout << 1 << " ";
+            }
+            else if(col == 0 && row > 0) {
+                // Leftmost element from precomputed array
+                cout << firstElem[row] << " ";
+            }
+            else if(col >= row-2) { 
+                // Handle rightmost 3 elements
+                if(col == row-1) cout << n - col << " ";
+                else if(col == row-2) cout << (n - col -1)*2 << " ";
+            }
+            else {
+                // Calculate middle elements using formula
+                int j = col;
+                int value = firstElem[row] - (j * (2*n - j - 1)) / 2;
+                cout << value << " ";
+            }
+        }
+        cout << endl;
+    }
     return 0;
 }
